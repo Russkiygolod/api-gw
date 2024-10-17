@@ -10,6 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
+// в процессе доработки
 func TestGetRequest(t *testing.T) {
 	r, _ := http.NewRequest("POST", "/register", strings.NewReader(`{"emal":"asdf@mail.ru","password":"asdf"}`))
 	w := httptest.NewRecorder()

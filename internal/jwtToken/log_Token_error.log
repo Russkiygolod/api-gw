@@ -1,0 +1,1 @@
+ERROR:2024/10/17 22:50:19 jwtToken.go:37: token contains an invalid number of segments

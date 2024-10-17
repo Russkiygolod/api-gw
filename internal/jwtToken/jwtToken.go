@@ -9,14 +9,6 @@ import (
 	jwt "github.com/dgrijalva/jwt-go"
 )
 
-//go:generate mockgen -source=jwtToken.go -destination=mocks/jwt_mock.go -package=mock
-
-type JwtToken interface {
-	GetToken(Email string) (string, error)
-	VerifyToken(tokenString string) (jwt.Claims, error)
-	AuthMiddleware(tokenString string) (string, error)
-}
-
 // создаем логгер
 var fileError, _ = os.OpenFile("log_Token_error.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
 var logError = log.New(fileError, "ERROR:", log.LstdFlags|log.Lshortfile)
